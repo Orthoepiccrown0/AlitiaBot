@@ -366,6 +366,7 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
             l_tuttaIT.remove(utente);
             l_Umbria.remove(utente);
             l_Veneto.remove(utente);
+	    sendSystemMessage("Abbiamo resettato il tuo account su Routers",chatID);
         }catch (Exception ex){}
     }
 
