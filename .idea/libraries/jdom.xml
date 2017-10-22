@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jdom">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Telegram/jdom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Telegram/rome-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Telegram/telegrambots-3.3-jar-with-dependencies.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
