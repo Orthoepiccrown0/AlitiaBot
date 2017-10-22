@@ -219,8 +219,14 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
             }).start();
         }
 
+
+
         String msg = update.getMessage().getText();
-        
+
+        if(msg.equals("/reset")){
+            deleteUser(update.getMessage().getFrom().getUserName(),update.getMessage().getChatId());
+        }
+
         if(msg.equals("/start")){
         //
             /*SendMessage clearKeyboard = new SendMessage()
@@ -342,6 +348,32 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
         }
 
         //-----------------END OF MY SUPERPROGRAM----------------
+    }
+
+    private void deleteUser(String userName,long chatID){
+        try{
+            Utente utente = new Utente(chatID,userName);
+            l_Abruzzo.remove(utente);
+            l_Basilicata.remove(utente);
+            l_Calabria.remove(utente);
+            l_Campania.remove(utente);
+            l_Emilia_Romagna.remove(utente);
+            l_Friuli_Venezia.remove(utente);
+            l_Lazio.remove(utente);
+            l_Liguria.remove(utente);
+            l_Lombardia.remove(utente);
+            l_Marche.remove(utente);
+            l_Molise.remove(utente);
+            l_Piemonte.remove(utente);
+            l_Puglia.remove(utente);
+            l_Sardegna.remove(utente);
+            l_Sicilia.remove(utente);
+            l_Toscana.remove(utente);
+            l_Trentino_Alto.remove(utente);
+            l_tuttaIT.remove(utente);
+            l_Umbria.remove(utente);
+            l_Veneto.remove(utente);
+        }catch (Exception ex){}
     }
 
     private void isThereusers(){
@@ -582,7 +614,7 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
         }
     }
 
-    public void sendMyMessage(String titolo,String link,String descrizione, long chatid){
+    private void sendMyMessage(String titolo,String link,String descrizione, long chatid){
         SendMessage tmp = new SendMessage()
                     .setChatId(chatid)
                     .setText(titolo+"\n"+link+"\n"+descrizione);
@@ -592,6 +624,18 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
+    }
+
+    private void sendSystemMessage(String messagio, long chatid){
+        SendMessage tmp = new SendMessage()
+                .setChatId(chatid)
+                .setText(messagio);
+
+        try {
+            execute(tmp);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
     }
     
     private synchronized void reader(Date oraEsatta, URL url, String source) throws IOException{
@@ -627,8 +671,7 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
 
 
         }
-    
-   
+
     private void newRow(){
         keyboard.add(row);
         // Create another keyboard row
