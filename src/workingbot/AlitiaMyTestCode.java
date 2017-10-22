@@ -228,13 +228,6 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
         }
 
         if(msg.equals("/start")){
-        //
-            /*SendMessage clearKeyboard = new SendMessage()
-                    .setChatId(update.getMessage().getChatId())
-                    .setText("Routers!")
-                    .setReplyMarkup(new ReplyKeyboardRemove());
-            try{execute(clearKeyboard);}catch(Exception ex){ex.printStackTrace();}*/
-        //
         SendMessage message = new SendMessage() // Create a message object object
                 .setChatId(update.getMessage().getChatId())
                 .setText("Scegli la tua regione");
