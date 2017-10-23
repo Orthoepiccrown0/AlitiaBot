@@ -12,7 +12,6 @@ import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardRemove;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
-
 import java.net.URL;
 import java.util.*;
 
@@ -642,7 +641,7 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
 	      //System.out.println("XYI");
 
 	     for (Iterator<SyndEntry> i = feed.getEntries().iterator(); i.hasNext();) {
-	    	 //Iteriamo tutte le voci presenti nel nostro feed e ne stampiano le propriet� fondmentali
+	    	 //Iteriamo tutte le voci presenti nel nostro feed e ne stampiano le proprieta fondmentali
 	        SyndEntry entry = i.next();
 			Date oraPosting = entry.getPublishedDate();
 			long oraPost = oraPosting.getTime();
@@ -651,7 +650,7 @@ public class AlitiaMyTestCode extends TelegramLongPollingBot {
 				System.out.println("titolo:" + entry.getTitle());
 				System.out.println("link:" + entry.getLink());
 				System.out.println("descrizione:" + entry.getDescription().getValue());
-				System.out.println("TIME "+ entry.getPublishedDate()+"\n");
+				System.out.println("Regione "+ source+"\n");
                                 toAllMySubs(entry.getTitle(), entry.getLink(),entry.getDescription().getValue(), source);
                                 Thread.sleep(3000);
                         }
